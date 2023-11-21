@@ -20,11 +20,6 @@ library(dplyr)
 library(osmdata)
 
 
-
-
-recorte <- "Límite_Funes.geojson"
-
-
 osmstreets <- function(capa){
 
 bbox_base <- sf::st_bbox(st_read(capa) %>% sf::st_transform(4326))
@@ -67,8 +62,4 @@ final <- rbind(sector_final_LP,sector_final_L)
 final_select <- dplyr::select(final,c(osm_id,name,highway,access,surface,maxspeed))
 }
 
-
-calles <- osmstreets(recorte)
-
-plot(calles)
 
