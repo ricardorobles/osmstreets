@@ -14,13 +14,15 @@
 #   Test Package:              'Cmd + Shift + T'
 
 
+
+
+
+osmstreets <- function(capa){
+
 library(sf)
 library(tidyverse)
 library(dplyr)
 library(osmdata)
-
-
-osmstreets <- function(capa){
 
 bbox_base <- sf::st_bbox(st_read(capa) %>% sf::st_transform(4326))
 
